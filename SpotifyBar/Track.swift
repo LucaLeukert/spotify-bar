@@ -48,8 +48,8 @@ enum SongTitleCleaner {
     private static let decorations = [
         #"\s*[\(\[]\s*(?:feat\.?|ft\.?|featuring)\s+[^\)\]]+[\)\]]"#,
         #"\s+(?:feat\.?|ft\.?|featuring)\s+.+$"#,
-        #"\s*[-–—]\s*(Remaster(?:ed)?|Live|Radio Edit|Single Version|Album Version|Explicit)\b.*$"#,
-        #"\s*[\(\[]\s*(?:\d{4}\s+)?(?:Remaster(?:ed)?|Live|Radio Edit|Single Version|Album Version|Explicit)[^\)\]]*[\)\]]\s*$"#
+        #"\s*[-–—]\s*(Remaster(?:ed)?|Live|Radio (?:Edit|Version)|Single Version|Album Version|Explicit)\b.*$"#,
+        #"\s*[\(\[]\s*(?:\d{4}\s+)?(?:Remaster(?:ed)?|Live|Radio (?:Edit|Version)|Single Version|Album Version|Explicit)[^\)\]]*[\)\]]\s*$"#
     ]
 
     static func clean(_ title: String) -> String {
