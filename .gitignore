@@ -1,0 +1,6 @@
+.DS_Store
+.derived/
+.*-derived/
+.release-*/
+xcuserdata/
+*.xcuserstate

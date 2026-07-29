@@ -1,0 +1,46 @@
+name: SpotifyBar
+options:
+  bundleIdPrefix: de.lucaleukert
+  deploymentTarget:
+    macOS: "14.0"
+  createIntermediateGroups: true
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    MACOSX_DEPLOYMENT_TARGET: "14.0"
+    CODE_SIGN_STYLE: Automatic
+    DEVELOPMENT_TEAM: ""
+targets:
+  SpotifyBar:
+    type: application
+    platform: macOS
+    sources:
+      - path: SpotifyBar
+        excludes:
+          - Info.plist
+          - SpotifyBar.entitlements
+    info:
+      path: SpotifyBar/Info.plist
+      properties:
+        LSApplicationCategoryType: public.app-category.music
+        LSUIElement: true
+        NSAppleEventsUsageDescription: Spotify Bar uses Spotify’s local AppleScript interface to show the current song and control playback.
+        NSHumanReadableCopyright: Copyright © 2026 Luca Leukert
+        NSPrincipalClass: NSApplication
+    entitlements:
+      path: SpotifyBar/SpotifyBar.entitlements
+      properties:
+        com.apple.security.app-sandbox: false
+        com.apple.security.automation.apple-events: true
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: de.lucaleukert.SpotifyBar
+        PRODUCT_NAME: Spotify Bar
+        MARKETING_VERSION: "1.0"
+        CURRENT_PROJECT_VERSION: "1"
+        GENERATE_INFOPLIST_FILE: NO
+        INFOPLIST_FILE: SpotifyBar/Info.plist
+        CODE_SIGN_ENTITLEMENTS: SpotifyBar/SpotifyBar.entitlements
+        ASSETCATALOG_COMPILER_APPICON_NAME: ""
+        ENABLE_HARDENED_RUNTIME: YES
+        COMBINE_HIDPI_IMAGES: YES
