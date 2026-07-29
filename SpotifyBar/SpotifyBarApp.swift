@@ -119,6 +119,7 @@ private struct SpotifyMenu: View {
                         Text(style.label).tag(style.rawValue)
                     }
                 }
+                .labelsHidden()
             }
         }
 
